@@ -1,0 +1,2 @@
+{"name":"HYBRID-X1 Home","short_name":"X1 Home","start_url":"./","display":"standalone","background_color":"#101215","theme_color":"#d4881e",
+"icons":[{"src":"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23d4881e'/%3E%3Ctext x='50' y='66' font-size='56' text-anchor='middle'%3E%F0%9F%8F%A0%3C/text%3E%3C/svg%3E","sizes":"any","type":"image/svg+xml","purpose":"any"}]}

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HYBRID-X1 Smart Home Pro</title>
+<style>
+:root{--bg:#f4f3ee;--cd:#fff;--bd:#d9d7cd;--tx:#1f1f1d;--mu:#6b6a64;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161a;--cd:#1e2126;--bd:#32363d;--tx:#ecebe4;--mu:#a09e95}}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.w{max-width:1000px;margin:0 auto;padding:16px 12px}h1{font-size:22px;margin:0;font-weight:600}.sub{color:var(--mu);margin:2px 0 12px;font-size:14px}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-bottom:12px}.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.k,.bx,.rm{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px}.bx,.rm{margin-bottom:0}
+.k small{color:var(--mu);font-size:12px;display:block}.k b{font-size:24px;font-weight:600}
+.bx h3,.rm h3{margin:0 0 6px;font-size:15px;font-weight:600}
+.rm{transition:background .3s}.rm.lit{background:#fff3c4;color:#2c2400}.rm.lit .mu{color:#6b5a10}
+.mu{color:var(--mu);font-size:13px}.v{font-size:24px;font-weight:600}
+.b{font:inherit;padding:7px 12px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx);cursor:pointer;margin:5px 5px 0 0}.b.a{background:var(--tx);color:var(--bg)}
+.rm.lit .b{background:#fff;color:#222}.rm.lit .b.a{background:#222;color:#fff}
+input[type=range]{width:100%}label{display:block;font-size:13px;color:var(--mu);margin-top:6px}
+input[type=text]{font:inherit;width:100%;padding:8px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+canvas{width:100%;height:100px}
+#log{background:#0b0c0e;color:#d7d5cc;border-radius:10px;padding:10px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;height:190px;overflow:auto}
+.A{color:#6db7ff}.E{color:#7ddc4a}.P{color:#ff8fb6}
+#st{padding:10px 14px;border-radius:10px;font-weight:600;margin-bottom:12px;background:#d7f0dd;color:#0f3d1f}#st.al{background:#f9d4d4;color:#6a1111}
+.tag{font-size:11px;padding:1px 8px;border-radius:99px;border:1px solid var(--bd);margin-left:4px;font-weight:400}
+.sec{margin:14px 0 6px;font-size:13px;color:var(--mu);text-transform:none;font-weight:600}
+.row{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:5px 0;font-size:14px;border-bottom:1px solid var(--bd)}.row:last-child{border:0}
+.sp{animation:sp .5s linear infinite;transform-box:fill-box;transform-origin:center}@keyframes sp{to{transform:rotate(360deg)}}
+.fl{animation:fl .6s ease-in-out infinite}@keyframes fl{50%{opacity:.15}}
+svg text{font-family:system-ui,sans-serif}.hl{fill:#4b4a45;font-size:12px}.hm{fill:#6b6a64;font-size:10px}
+.ex{margin-top:18px}.ex h2{font-size:19px;margin:0 0 10px;font-weight:600}.ex h3{font-size:15px;margin:16px 0 6px;font-weight:600}.ex p,.ex li{font-size:14px;line-height:1.7;color:var(--tx)}.ex ul,.ex ol{margin:4px 0 4px 20px;padding:0}
+.ex .st3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.ex .st3 div{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:10px}.ex .st3 b{display:block;margin-bottom:2px}
+.ex table{width:100%;border-collapse:collapse;font-size:13px}.ex td,.ex th{padding:7px 8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}.ex th{color:var(--mu);font-weight:500}
+.ex .nt{border-left:4px solid #BA7517;padding:8px 12px;font-size:13px;margin-top:12px;background:var(--bg)}
+</style></head><body><div class="w">
+<h1>Smart Home Pro with HYBRID-X1</h1><p class="sub">Scenes, voice commands, energy monitoring, safety sensors and automation rules.</p>
+<div id="st">Home is secure</div>
+<div class="bx" style="margin-bottom:12px;padding:8px"><svg viewBox="0 0 700 330" role="img" aria-label="Cutaway of a smart home with three rooms, lights, fans, door lock, sensors and phone alerts"><rect id="hs" width="700" height="330" rx="10" fill="#bfe3f5"/><g id="hst"></g><circle id="hsun" cx="60" cy="60" r="18" fill="#f6c945"/><rect id="hgr" y="290" width="700" height="40" fill="#5e8f3a"/><polygon points="40,120 350,50 660,120" fill="#8b4a3b" stroke="#5b2f25" stroke-width="2"/><rect x="305" y="76" width="90" height="28" rx="5" fill="#222" stroke="#aaa"/><text x="350" y="94" text-anchor="middle" style="fill:#fff;font-size:11px">HYBRID-X1</text><circle cx="318" cy="84" r="2.5" fill="#6db7ff"/><circle cx="326" cy="84" r="2.5" fill="#7ddc4a"/><circle cx="334" cy="84" r="2.5" fill="#ff8fb6"/><g fill="none" stroke="#7ddc4a" stroke-width="2" opacity=".8"><path d="M380 70q12-10 24 0"/><path d="M376 62q16-14 32 0"/></g><circle id="hsn" cx="350" cy="52" r="6" fill="#e5484d" opacity="0"/><rect id="rb0" x="60" y="120" width="190" height="170" fill="#efe9dc" stroke="#444" stroke-width="2"/><rect id="rg0" x="60" y="120" width="190" height="170" fill="#ffd860" opacity="0"/><line x1="155" y1="120" x2="155" y2="138" stroke="#555" stroke-width="2"/><circle id="lp0" cx="155" cy="146" r="9" fill="#9aa0a6" stroke="#555"/><circle id="pd0" cx="72" cy="131" r="4" fill="#9aa0a6"/><text id="tx0" x="82" y="135" class="hl">26°C</text><g transform="translate(222 142)"><g id="fn0"><path d="M0 0 C-4 -14 4 -14 0 0 M0 0 C14 -4 14 4 0 0 M0 0 C4 14 -4 14 0 0 M0 0 C-14 4 -14 -4 0 0" fill="#5a6b7a" stroke="#34424e"/></g><circle r="3" fill="#222"/></g><text x="68" y="284" class="hm">Living room</text><g id="pr0" opacity="0"><circle cx="155" cy="238" r="7" fill="#e0a070"/><rect x="148" y="246" width="14" height="28" rx="6" fill="#3a6ea5"/></g><rect id="rb1" x="250" y="120" width="200" height="170" fill="#efe9dc" stroke="#444" stroke-width="2"/><rect id="rg1" x="250" y="120" width="200" height="170" fill="#ffd860" opacity="0"/><line x1="350" y1="120" x2="350" y2="138" stroke="#555" stroke-width="2"/><circle id="lp1" cx="350" cy="146" r="9" fill="#9aa0a6" stroke="#555"/><circle id="pd1" cx="262" cy="131" r="4" fill="#9aa0a6"/><text id="tx1" x="272" y="135" class="hl">26°C</text><g transform="translate(422 142)"><g id="fn1"><path d="M0 0 C-4 -14 4 -14 0 0 M0 0 C14 -4 14 4 0 0 M0 0 C4 14 -4 14 0 0 M0 0 C-14 4 -14 -4 0 0" fill="#5a6b7a" stroke="#34424e"/></g><circle r="3" fill="#222"/></g><text x="258" y="284" class="hm">Bedroom</text><g id="pr1" opacity="0"><circle cx="350" cy="238" r="7" fill="#e0a070"/><rect x="343" y="246" width="14" height="28" rx="6" fill="#3a6ea5"/></g><rect id="rb2" x="450" y="120" width="190" height="170" fill="#efe9dc" stroke="#444" stroke-width="2"/><rect id="rg2" x="450" y="120" width="190" height="170" fill="#ffd860" opacity="0"/><line x1="545" y1="120" x2="545" y2="138" stroke="#555" stroke-width="2"/><circle id="lp2" cx="545" cy="146" r="9" fill="#9aa0a6" stroke="#555"/><circle id="pd2" cx="462" cy="131" r="4" fill="#9aa0a6"/><text id="tx2" x="472" y="135" class="hl">26°C</text><g transform="translate(612 142)"><g id="fn2"><path d="M0 0 C-4 -14 4 -14 0 0 M0 0 C14 -4 14 4 0 0 M0 0 C4 14 -4 14 0 0 M0 0 C-14 4 -14 -4 0 0" fill="#5a6b7a" stroke="#34424e"/></g><circle r="3" fill="#222"/></g><text x="458" y="284" class="hm">Kitchen</text><g id="pr2" opacity="0"><circle cx="545" cy="238" r="7" fill="#e0a070"/><rect x="538" y="246" width="14" height="28" rx="6" fill="#3a6ea5"/></g><rect x="150" y="252" width="82" height="38" rx="6" fill="#8d6e63"/><rect x="156" y="244" width="70" height="14" rx="5" fill="#a1887f"/><rect x="290" y="258" width="125" height="32" rx="4" fill="#6b7fa8"/><rect x="294" y="248" width="30" height="14" rx="5" fill="#dfe6f2"/><rect x="470" y="256" width="96" height="34" rx="3" fill="#9aa0a6"/><circle cx="492" cy="256" r="5" fill="#444"/><circle cx="514" cy="256" r="5" fill="#444"/><g id="gf" opacity="0"><path d="M492 252q-5-10 0-14q5 6 0 14" fill="#ff8c1a"/><path d="M514 252q-5-10 0-14q5 6 0 14" fill="#ff8c1a"/></g><rect x="604" y="150" width="26" height="14" rx="3" fill="#333"/><text x="617" y="161" text-anchor="middle" style="fill:#fff;font-size:8px">GAS</text><circle cx="340" cy="132" r="6" fill="#ddd" stroke="#777"/><ellipse id="wp" cx="540" cy="288" rx="46" ry="6" fill="#3a9ad9" opacity="0"/><ellipse id="gc" cx="540" cy="215" rx="70" ry="45" fill="#8bd36a" opacity="0"/><ellipse id="sk" cx="345" cy="160" rx="60" ry="32" fill="#777" opacity="0"/><rect x="70" y="210" width="34" height="80" fill="#6d4c41" stroke="#3e2b22"/><circle id="dk" cx="97" cy="252" r="5" fill="#2e8b57" stroke="#fff"/><text x="87" y="204" text-anchor="middle" class="hm" style="fill:#fff">Door</text><g id="vst" opacity="0"><circle cx="38" cy="256" r="7" fill="#e0a070"/><rect x="31" y="264" width="14" height="26" rx="6" fill="#c0392b"/></g><rect id="al" x="58" y="118" width="584" height="174" fill="none" stroke="#e5484d" stroke-width="5" opacity="0"/><circle id="vv" cx="652" cy="270" r="7" fill="#2e8b57" stroke="#fff"/><text x="652" y="296" text-anchor="middle" style="fill:#fff;font-size:9px">Valve</text><rect x="662" y="130" width="30" height="54" rx="6" fill="#222" stroke="#aaa"/><text x="677" y="162" text-anchor="middle" style="fill:#fff;font-size:9px">Phone</text><g id="nb" opacity="0"><rect x="560" y="196" width="130" height="40" rx="6" fill="#e5484d"/><text id="nt" x="625" y="213" text-anchor="middle" style="fill:#fff;font-size:10px"></text><text id="nt2" x="625" y="227" text-anchor="middle" style="fill:#fff;font-size:10px"></text></g><text id="hmd" x="14" y="24" class="hl" style="fill:#fff">Home</text></svg></div><div class="g"><div class="k"><small>Home time</small><b id="kc">--</b></div><div class="k"><small>Power now</small><b id="kp">0 W</b></div><div class="k"><small>Energy today</small><b id="ke">0.00 kWh</b></div><div class="k"><small>Cost today</small><b id="kk">₹0.00</b></div><div class="k"><small>Mode</small><b id="km" style="font-size:18px">Home</b></div></div>
+<div class="g g3" id="rooms"></div>
+<div class="sec">Scenes</div>
+<div><button class="b" data-s="Morning">Morning</button><button class="b" data-s="Movie">Movie</button><button class="b" data-s="Party">Party</button><button class="b" data-s="Sleep">Sleep</button><button class="b" data-s="Away">Away</button><button class="b" data-s="Home">Home</button></div>
+<div class="sec">Voice assistant (type a command)</div>
+<div class="bx"><input type="text" id="vi" placeholder='Try: "turn on kitchen light", "set bedroom light to 30", "lock the door", "movie mode"'><div class="mu" id="vo" style="margin-top:6px">Waiting for a command.</div></div>
+<div class="sec">Safety and security</div>
+<div class="g g3">
+<div class="bx"><h3>Safety sensors <span class="tag">Arduino</span></h3><button class="b" id="gs">Gas leak in kitchen</button><button class="b" id="sm">Smoke in bedroom</button><button class="b" id="wl">Water leak</button><button class="b" id="cl">Clear alarm</button><div class="mu" id="vl" style="margin-top:6px">Main water valve: open</div></div>
+<div class="bx"><h3>Front door <span class="tag">Arduino lock</span></h3><div class="v" id="dr">Locked</div><button class="b" id="lk">Unlock</button><button class="b" id="op">Open the door</button><button class="b" id="vs">Visitor rings bell</button></div>
+<div class="bx"><h3>Weather <span class="tag">ESP32</span></h3><div class="v" id="ot">32°C</div><input type="range" id="os" min="10" max="45" value="32"><label>Clock speed <b id="sv">1</b>x</label><input type="range" id="sr" min="1" max="6" value="2"></div></div>
+<div class="sec">Automation rules (Raspberry Pi)</div>
+<div class="bx" id="rules"></div>
+<div class="sec">Power use history</div>
+<div class="bx"><canvas id="cv" width="1000" height="100"></canvas></div>
+<div class="sec">HYBRID-X1 activity</div><div class="bx"><div id="log"></div></div>
+<p class="mu">Blue = Arduino (sensors and switches), green = ESP32 (phone alerts and weather), pink = Raspberry Pi (decisions).</p>
+<div class="bx ex" id="how" style="margin-top:18px"><h2>How this project works</h2>
+<p>This is a smart home controller. One HYBRID-X1 board does three jobs: the <b>Arduino part reads sensors and switches things on and off</b>, the <b>ESP32 part talks to your phone and the weather</b>, and the <b>Raspberry Pi part makes the decisions</b> and runs the dashboard.</p>
+<h3>Who does what</h3>
+<div class="st3">
+<div><b>Arduino: the hands and senses</b>Motion sensors (PIR) in each room, gas, smoke and water-leak sensors, the door sensor and doorbell. It switches lights, fans, the door lock and the water and gas valves through relays.</div>
+<div><b>ESP32: the messenger</b>Sends push notifications and camera snapshots to your phone, and brings in outside weather. It also lets you control the house from the phone over WiFi.</div>
+<div><b>Raspberry Pi: the brain</b>Receives every sensor event, applies the automation rules and scenes, understands voice or typed commands, and keeps the energy records.</div>
+</div>
+<h3>What happens when you walk into a dark room</h3>
+<ol><li>The PIR sensor notices movement. The Arduino tells the Pi.</li><li>The Pi checks the rules: it is night, and the "night motion light" rule is on.</li><li>The Pi sends a command to the Arduino, which dims the light up to 60%.</li><li>After 20 minutes without movement, the Pi tells the Arduino to switch it off.</li></ol>
+<h3>Automation rules</h3>
+<table><tr><th>Rule</th><th>What it does</th></tr>
+<tr><td>Night motion light</td><td>Turns a room's light on when someone enters after dark</td></tr>
+<tr><td>Fan above 28°C</td><td>Switches a room's fan on when it is hot and off when it cools</td></tr>
+<tr><td>Sunset lights</td><td>Living room light comes on at 18:30</td></tr>
+<tr><td>Lights off when empty</td><td>Saves power when nobody has moved for 20 minutes</td></tr>
+<tr><td>Away security</td><td>In Away mode, any motion or opened door raises an alarm and sends a phone alert</td></tr></table>
+<h3>Scenes and voice commands</h3>
+<p>A scene sets many things at once. <b>Movie</b> dims the living room and turns the rest off. <b>Sleep</b> turns everything off and locks the door. <b>Away</b> locks up, switches off the lights and arms the alarm. The voice box understands simple sentences like "set bedroom light to 30" or "lock the door". A real version would add a microphone and speech recognition on the Pi.</p>
+<h3>Safety sensors</h3>
+<table><tr><th>Event</th><th>Automatic response</th></tr>
+<tr><td>Gas leak</td><td>Gas valve closes, kitchen exhaust fan starts, alert sent to the phone</td></tr>
+<tr><td>Smoke</td><td>Door lock releases, escape lights turn on, alert sent</td></tr>
+<tr><td>Water leak</td><td>Main water valve closes, alert sent</td></tr></table>
+<h3>How the energy numbers are worked out</h3>
+<p>The Pi adds up the power of everything that is on: a basic 20 W for the electronics, up to 12 W per room light depending on brightness, and 45 W per fan. It multiplies power by time to get kWh, then multiplies by an assumed price of ₹8 per kWh. Change the price in the code to match your electricity bill.</p>
+<h3>Parts you need</h3>
+<p>HYBRID-X1 board (or Arduino Uno, ESP32 and Raspberry Pi 4), 3 PIR motion sensors, a relay board for lights and fans, an MQ-2 gas sensor, a smoke sensor, a water-leak sensor, a motorised water valve and a gas valve, a door lock solenoid with a reed switch, a doorbell button and a Pi camera.</p>
+<div class="nt">This page is a simulation that runs in your browser, so nothing here controls a real house. Switching mains-voltage lights and fans must be done by a qualified electrician. Use certified gas and smoke detectors for real safety. HYBRID-X1 should only add alerts and automatic actions on top of them, never replace them.</div></div>
+</div>
+<script>
+var $=function(i){return document.getElementById(i)},
+R=[{n:"Living room",b:0,f:0,t:26,m:0},{n:"Bedroom",b:0,f:0,t:26,m:0},{n:"Kitchen",b:0,f:0,t:26,m:0}],
+min=19*60,otemp=32,locked=1,mode="Home",kwh=0,watts=0,H=[],alarm=0,valve=1,spd=2,
+RU={night:["Night motion light",1],fan:["Fan turns on above 28°C",1],sunset:["Living room lights at sunset (18:30)",1],away:["Away mode security alerts",1],empty:["Lights off when a room is empty",1]};
+function log(c,t,m){var d=document.createElement("div");d.innerHTML='<span class="'+c+'">['+t+']</span> '+m;$("log").appendChild(d);$("log").scrollTop=1e9;while($("log").children.length>100)$("log").removeChild($("log").firstChild)}
+function fmt(m){m=Math.floor(m)%1440;return ("0"+Math.floor(m/60)).slice(-2)+":"+("0"+m%60).slice(-2)}
+function dark(){var h=Math.floor(min/60)%24;return h>=18||h<6}
+var h="";R.forEach(function(r,i){h+='<div class="rm" id="rm'+i+'"><h3>'+r.n+'</h3><div class="v" id="rt'+i+'">--</div><div class="mu" id="rs'+i+'"></div><label>Light brightness <b id="bv'+i+'">0</b>%</label><input type="range" min="0" max="100" value="0" id="bs'+i+'"><button class="b" data-f="'+i+'" id="fb'+i+'">Fan: off</button><button class="b" data-m="'+i+'">Walk in (motion)</button></div>'});$("rooms").innerHTML=h;
+h="";Object.keys(RU).forEach(function(k){h+='<div class="row"><span>'+RU[k][0]+'</span><button class="b a" data-r="'+k+'" style="margin:0">On</button></div>'});$("rules").innerHTML=h;
+function alertMsg(m,bad){$("st").className=bad?"al":"";$("st").textContent=(bad?"ALERT: ":"")+m}
+function notify(m){ntT=Date.now();ntM=m;log("E","ESP32","Push notification to phone: "+m)}
+function setL(i,v,why){v=Math.max(0,Math.min(100,v));if(R[i].b==v)return;R[i].b=v;log("A","ARDUINO",R[i].n+" light dimmer set to "+v+"%"+(why?" ("+why+")":""))}
+var mt={};
+function motion(i){var r=R[i];mvT[i]=Date.now();log("A","ARDUINO","PIR motion sensor: movement in "+r.n);
+ if(mode=="Away"&&RU.away[1]){alarm=1;aK="intruder";alertMsg("Motion in "+r.n+" while Away",1);notify("Intruder alert: motion in "+r.n);log("P","PI","Away rule: alarm raised, camera recording");return}
+ if(dark()&&RU.night[1]){if(!r.b)setL(i,60,"Pi night rule");r.m=min}}
+function scene(s){log("P","PI","Scene: "+s);if(s!="Away")aK="";mode=s=="Away"?"Away":s=="Sleep"?"Sleep":"Home";if(s!="Away"){alarm=0;alertMsg("Home is secure",0)}
+ var L={Morning:[70,0,80],Movie:[20,0,0],Party:[100,100,100],Sleep:[0,0,0],Away:[0,0,0],Home:[60,0,0]}[s];L.forEach(function(v,i){setL(i,v,s)});
+ if(s=="Away"||s=="Sleep"){if(!locked){locked=1;log("A","ARDUINO","Door lock engaged")}}
+ if(s=="Away"){R.forEach(function(r){r.f=0});notify("Away mode armed")}if(s=="Sleep")log("P","PI","Sleep: fans follow temperature only")}
+function voice(t){t=t.toLowerCase();var o="Sorry, I did not understand that.";var ri=-1;R.forEach(function(r,i){if(t.indexOf(r.n.split(" ")[0].toLowerCase())>=0)ri=i});
+ var m;if(m=t.match(/(\w+)\s+mode|scene\s+(\w+)/)){var s=(m[1]||m[2]);s=s.charAt(0).toUpperCase()+s.slice(1);if(["Morning","Movie","Party","Sleep","Away","Home"].indexOf(s)>=0){scene(s);o=s+" scene activated."}}
+ else if(/unlock/.test(t)){locked=0;log("A","ARDUINO","Door lock released (voice)");o="Door unlocked."}else if(/lock/.test(t)){locked=1;log("A","ARDUINO","Door lock engaged (voice)");o="Door locked."}
+ else if(ri>=0&&(m=t.match(/(\d+)/))&&/light/.test(t)){setL(ri,+m[1],"voice");o=R[ri].n+" light set to "+m[1]+"%."}
+ else if(ri>=0&&/light/.test(t)&&/\bon\b/.test(t)){setL(ri,80,"voice");o=R[ri].n+" light on."}
+ else if(ri>=0&&/light/.test(t)&&/off/.test(t)){setL(ri,0,"voice");o=R[ri].n+" light off."}
+ else if(ri>=0&&/fan/.test(t)){R[ri].f=/off/.test(t)?0:1;log("A","ARDUINO",R[ri].n+" fan relay "+(R[ri].f?"ON":"OFF"));o=R[ri].n+" fan "+(R[ri].f?"on.":"off.")}
+ else if(/how much|energy|power/.test(t)){o="Using "+Math.round(watts)+" W now, "+kwh.toFixed(2)+" kWh today."}
+ log("P","PI",'Voice: "'+t+'" → '+o);$("vo").textContent=o}
+function danger(kind){alarm=1;aK=kind;if(kind=="gas"){alertMsg("Gas leak detected in the kitchen",1);R[2].f=1;log("A","ARDUINO","MQ-2 gas sensor above limit");log("A","ARDUINO","Gas valve closed, kitchen exhaust fan ON");log("P","PI","Gas rule: no lights switched, windows alert sent");notify("Gas leak in kitchen! Valve closed")}
+ if(kind=="smoke"){alertMsg("Smoke detected in the bedroom",1);locked=0;log("A","ARDUINO","Smoke sensor triggered");log("A","ARDUINO","Door lock released for escape");setL(0,100,"escape lighting");setL(1,100,"escape lighting");notify("Smoke in bedroom! Door unlocked, lights on")}
+ if(kind=="water"){alertMsg("Water leak detected",1);valve=0;$("vl").textContent="Main water valve: CLOSED";log("A","ARDUINO","Water sensor wet");log("A","ARDUINO","Motorised main valve closed");notify("Water leak! Main valve closed")}}
+document.querySelectorAll("[data-s]").forEach(function(b){b.onclick=function(){scene(b.dataset.s)}});
+document.querySelectorAll("[data-f]").forEach(function(b){b.onclick=function(){var r=R[+b.dataset.f];r.f=r.f?0:1;log("P","PI",r.n+" fan "+(r.f?"on":"off")+" from phone");log("A","ARDUINO","Fan relay "+(r.f?"ON":"OFF"))}});
+document.querySelectorAll("[data-m]").forEach(function(b){b.onclick=function(){motion(+b.dataset.m)}});
+document.querySelectorAll("[data-r]").forEach(function(b){b.onclick=function(){var k=b.dataset.r;RU[k][1]=RU[k][1]?0:1;b.textContent=RU[k][1]?"On":"Off";b.classList.toggle("a",!!RU[k][1]);log("P","PI","Rule "+RU[k][0]+": "+(RU[k][1]?"enabled":"disabled"))}});
+R.forEach(function(r,i){$("bs"+i).oninput=function(){r.b=+this.value;r.m=min}});
+$("vi").onkeydown=function(e){if(e.key=="Enter"&&this.value){voice(this.value);this.value=""}};
+$("gs").onclick=function(){danger("gas")};$("sm").onclick=function(){danger("smoke")};$("wl").onclick=function(){danger("water")};
+$("cl").onclick=function(){alarm=0;aK="";valve=1;$("vl").textContent="Main water valve: open";alertMsg(mode=="Away"?"Away mode: home is armed":"Home is secure",0);log("P","PI","Alarm cleared")};
+$("lk").onclick=function(){locked=!locked;log("A","ARDUINO","Door lock "+(locked?"engaged":"released"));log("P","PI","Door "+(locked?"locked":"unlocked")+" from dashboard")};
+$("op").onclick=function(){if(locked){log("A","ARDUINO","Door is locked, cannot open");return}log("A","ARDUINO","Magnetic door sensor: door opened");if(mode=="Away"&&RU.away[1]){alarm=1;aK="intruder";alertMsg("Front door opened while Away",1);notify("Intruder alert: front door opened!")}else log("P","PI","Welcome home")};
+$("vs").onclick=function(){visT=Date.now();log("A","ARDUINO","Doorbell pressed");log("E","ESP32","Camera snapshot sent to phone: visitor at the front door");log("P","PI","Visitor logged at "+fmt(min))};
+$("os").oninput=function(){otemp=+this.value};$("sr").oninput=function(){spd=+this.value;$("sv").textContent=spd};
+function spark(){var c=$("cv"),x=c.getContext("2d");x.clearRect(0,0,1000,100);x.strokeStyle="#e0a020";x.lineWidth=3;x.beginPath();H.forEach(function(v,k){var X=k*(1000/119),Y=96-Math.min(v/300,1)*92;k?x.lineTo(X,Y):x.moveTo(X,Y)});x.stroke()}
+var lastDay=0,aK="",ntT=0,ntM="",visT=0,mvT=[0,0,0];
+function tick(){
+ min+=5*spd;var d=Math.floor(min/1440);if(d!=lastDay){lastDay=d;kwh=0}
+ var hm=Math.floor(min%1440),w=20;
+ R.forEach(function(r,i){var tg=otemp-(r.f?5:0)+(r.b?1:0);r.t+=(tg-r.t)*0.05*spd;
+  if(RU.fan[1]&&mode!="Away"){var want=r.t>28?1:0;if(want!=r.f&&!(alarm&&i==2)){r.f=want;log("P","PI",r.n+" is "+Math.round(r.t)+"°C: fan "+(want?"on":"off"));log("A","ARDUINO","Fan relay "+(want?"ON":"OFF"))}}
+  if(RU.empty[1]&&r.b&&r.m&&min-r.m>20&&mode!="Party"&&mode!="Away"&&i!=0||RU.empty[1]&&r.b&&r.m&&min-r.m>20&&dark()&&mode=="Home"&&i!=0){if(r.m){setL(i,0,"nobody there for 20 min");r.m=0}}
+  w+=r.b*0.12+(r.f?45:0)});
+ if(RU.sunset[1]&&hm==1110&&mode=="Home"&&!R[0].b)setL(0,70,"sunset rule");
+ if(mode=="Away"){w-=0}
+ watts=w;kwh+=w*(5*spd/60)/1000;var cost=kwh*8;H.push(w);H=H.slice(-120);
+ R.forEach(function(r,i){$("rm"+i).classList.toggle("lit",r.b>0);$("rt"+i).textContent=Math.round(r.t)+"°C";$("rs"+i).textContent="Light "+(r.b?r.b+"%":"off")+" · Fan "+(r.f?"on":"off");$("fb"+i).textContent="Fan: "+(r.f?"on":"off");$("fb"+i).classList.toggle("a",!!r.f);$("bv"+i).textContent=r.b;if(document.activeElement!==$("bs"+i))$("bs"+i).value=r.b});
+ $("kc").textContent=fmt(min)+(dark()?" (night)":" (day)");$("kp").textContent=Math.round(w)+" W";$("ke").textContent=kwh.toFixed(2)+" kWh";$("kk").textContent="₹"+cost.toFixed(2);$("km").textContent=mode+(alarm?" · ALARM":"");
+ $("dr").textContent=locked?"Locked":"Unlocked";$("lk").textContent=locked?"Unlock":"Lock";$("ot").textContent=otemp+"°C";spark();house()}
+
+var STARS="";for(var q=0;q<40;q++)STARS+='<circle cx="'+(Math.random()*700)+'" cy="'+(Math.random()*100)+'" r="1.2" fill="#fff"/>';$("hst").innerHTML=STARS;
+function house(){
+ var hr=(min%1440)/60,day=hr>=6&&hr<19,now=Date.now();
+ $("hs").setAttribute("fill",day?(hr<8||hr>17?"#f4c99a":"#bfe3f5"):"#1b2742");$("hst").setAttribute("opacity",day?0:.9);$("hgr").setAttribute("fill",day?"#5e8f3a":"#2f4a22");
+ var p=day?(hr-6)/13:((hr+6)%24)/11;$("hsun").setAttribute("cx",day?60+560*p:60+560*p);$("hsun").setAttribute("cy",120-80*Math.sin(p*Math.PI));$("hsun").setAttribute("fill",day?"#f6c945":"#e8ecf5");
+ R.forEach(function(r,i){$("rb"+i).setAttribute("fill",dark()?"#2f3441":"#efe9dc");$("rg"+i).setAttribute("opacity",r.b/100*0.8);$("lp"+i).setAttribute("fill",r.b?"#ffd54a":"#9aa0a6");$("fn"+i).setAttribute("class",r.f?"sp":"");$("tx"+i).textContent=Math.round(r.t)+"°C";$("tx"+i).setAttribute("style",dark()?"fill:#e6e6e6":"");$("pr"+i).setAttribute("opacity",now-mvT[i]<3000?1:0);$("pd"+i).setAttribute("fill",now-mvT[i]<3000?"#e5484d":"#9aa0a6")});
+ $("gc").setAttribute("opacity",aK=="gas"?.45:0);$("gf").setAttribute("opacity",aK=="gas"?1:0);$("sk").setAttribute("opacity",aK=="smoke"?.6:0);$("wp").setAttribute("opacity",aK=="water"?.8:0);
+ $("al").setAttribute("opacity",aK?1:0);$("al").setAttribute("class",aK?"fl":"");$("hsn").setAttribute("opacity",aK?1:0);$("hsn").setAttribute("class",aK?"fl":"");
+ $("dk").setAttribute("fill",locked?"#2e8b57":"#e5484d");$("vv").setAttribute("fill",valve?"#2e8b57":"#e5484d");$("vst").setAttribute("opacity",now-visT<4000?1:0);
+ var show=now-ntT<4000;$("nb").setAttribute("opacity",show?1:0);if(show){var s=ntM.replace(/!.*$/,"!"),k=s.length>22?s.lastIndexOf(" ",22):s.length;$("nt").textContent=s.slice(0,k);$("nt2").textContent=s.slice(k).trim().slice(0,24)}
+ $("hmd").textContent="Mode: "+mode+" · "+otemp+"°C outside"+(aK?" · ALARM":"")}
+R.forEach(function(r){r.t=26});log("P","PI","HYBRID-X1 online. Arduino, ESP32 and Pi connected.");setInterval(tick,400);tick();
+</script></body></html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>HYBRID-X1 Smart Irrigation Pro</title>
+<style>
+:root{--bg:#f4f3ee;--cd:#fff;--bd:#d9d7cd;--tx:#1f1f1d;--mu:#6b6a64;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#14161a;--cd:#1e2126;--bd:#32363d;--tx:#ecebe4;--mu:#a09e95}}
+*{box-sizing:border-box}html,body{margin:0;background:var(--bg);color:var(--tx);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.5}
+.w{max-width:1000px;margin:0 auto;padding:16px 12px}h1{font-size:22px;margin:0;font-weight:600}.sub{color:var(--mu);margin:2px 0 12px;font-size:14px}
+.tabs{display:flex;gap:6px;margin-bottom:12px;flex-wrap:wrap}
+.tb,.b{font:inherit;padding:8px 14px;border-radius:99px;border:1px solid var(--bd);background:var(--cd);color:var(--tx);cursor:pointer}
+.b{border-radius:8px;background:var(--bg);margin:4px 6px 0 0}.tb.a,.b.a{background:var(--tx);color:var(--bg)}
+.pg{display:none}.pg.a{display:block}
+.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin-bottom:12px}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.k{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px}.k small{color:var(--mu);font-size:12px;display:block}.k b{font-size:24px;font-weight:600}
+.bx{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:12px;overflow-x:auto}.bx h3{margin:0 0 8px;font-size:15px;font-weight:600}
+svg{width:100%;height:auto;display:block}svg text{font-family:system-ui,sans-serif}
+label{display:block;font-size:13px;color:var(--mu);margin:8px 0 2px}input[type=range]{width:100%}
+select{font:inherit;padding:6px 8px;border-radius:8px;border:1px solid var(--bd);background:var(--bg);color:var(--tx)}
+canvas{width:100%;height:110px}
+#log,pre{background:#0b0c0e;color:#d7d5cc;border-radius:10px;padding:10px;font:12px/1.5 ui-monospace,Menlo,Consolas,monospace;overflow:auto;margin:0}
+#log{height:150px}pre{max-height:440px}
+.t{fill:var(--tx);font-size:13px}.m{fill:var(--mu);font-size:11px}.bo{fill:var(--cd);stroke:var(--bd);stroke-width:1.5}
+.pill{display:inline-block;font-size:12px;padding:2px 10px;border-radius:99px;border:1px solid var(--bd);margin:2px 4px 2px 0}
+.ok{background:#d7f0dd;color:#0f3d1f;border-color:#9ed3ad}.bad{background:#f9d4d4;color:#6a1111;border-color:#e3a0a0}.wn{background:#fbe9c4;color:#5a3a00;border-color:#e2c27d}
+.ins{font-size:14px;line-height:1.7}
+.ex{margin-top:18px}.ex h2{font-size:19px;margin:0 0 10px;font-weight:600}.ex h3{font-size:15px;margin:16px 0 6px;font-weight:600}.ex p,.ex li{font-size:14px;line-height:1.7;color:var(--tx)}.ex ul,.ex ol{margin:4px 0 4px 20px;padding:0}
+.ex .st3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px}.ex .st3 div{background:var(--bg);border:1px solid var(--bd);border-radius:10px;padding:10px}.ex .st3 b{display:block;margin-bottom:2px}
+.ex table{width:100%;border-collapse:collapse;font-size:13px}.ex td,.ex th{padding:7px 8px;border-bottom:1px solid var(--bd);text-align:left;vertical-align:top}.ex th{color:var(--mu);font-weight:500}
+.ex .nt{border-left:4px solid #BA7517;padding:8px 12px;font-size:13px;margin-top:12px;background:var(--bg)}
+</style></head><body><div class="w">
+<h1>Smart Irrigation Pro with HYBRID-X1</h1><p class="sub">3 zones, crop profiles, weather forecast, predictions and fault detection.</p>
+<div class="tabs"><button class="tb a" data-p="d">Live dashboard</button><button class="tb" data-p="w">Wiring diagram</button><button class="tb" data-p="c">Code</button></div>
+
+<div class="pg a" id="pd">
+<div class="g"><div class="k"><small>Farm time</small><b id="kc">--</b></div><div class="k"><small>Water tank</small><b id="kw">--</b></div><div class="k"><small>Water used</small><b id="ku">0 L</b></div><div class="k"><small>Water saved</small><b id="kv">0 L</b></div><div class="k"><small>Forecast rain</small><b id="kf">--</b></div></div>
+<div class="bx"><svg viewBox="0 0 700 260" role="img" aria-label="Three field zones with sprinklers, sky and tank"><rect id="sky" width="700" height="260" rx="10" fill="#bfe3f5"/>
+<g id="stars"></g><circle id="sun" cx="60" cy="60" r="20" fill="#f6c945"/>
+<g id="rain" opacity="0"><ellipse cx="350" cy="40" rx="90" ry="22" fill="#8a9aa6"/><g stroke="#4a8bc2" stroke-width="3" stroke-linecap="round"><path d="M300 70v14M340 74v14M380 70v14M420 74v14"/></g></g>
+<g id="zn"></g>
+<rect x="640" y="120" width="44" height="100" rx="5" fill="#4a7ba6"/><rect x="643" y="123" width="38" height="94" rx="3" fill="#d9eef9"/><rect id="tk" x="643" y="217" width="38" height="0" fill="#3a9ad9"/><text x="662" y="114" text-anchor="middle" class="m">Tank</text></svg></div>
+<div class="g g3" id="zc"></div>
+<div class="bx"><h3>Soil moisture history, all zones</h3><canvas id="cv" width="1000" height="110"></canvas><div class="m" style="font-size:12px;color:var(--mu)"><span style="color:#2e8b57">Zone 1</span> · <span style="color:#d4881e">Zone 2</span> · <span style="color:#7a5cd6">Zone 3</span></div></div>
+<div class="g g3"><div class="bx"><h3>Weather and time</h3>
+<label>Base temperature <b id="tv">30</b> °C</label><input type="range" id="tr" min="15" max="42" value="30">
+<label>Forecast chance of rain <b id="fv">10</b>%</label><input type="range" id="fr" min="0" max="100" value="10">
+<label>Simulation speed <b id="sv">1</b>x</label><input type="range" id="sr" min="1" max="6" value="1">
+<button class="b" id="rn">Make it rain</button><button class="b" id="au">Auto mode: on</button><button class="b" id="rf">Refill tank</button></div>
+<div class="bx"><h3>Predictions and insights</h3><div class="ins" id="ins"></div></div>
+<div class="bx"><h3>Alerts</h3><div id="al"></div><button class="b" id="ft">Break zone 3 sensor</button></div></div>
+<div class="bx"><h3>HYBRID-X1 activity</h3><div id="log"></div></div>
+</div>
+
+<div class="pg" id="pw"><div class="bx"><svg viewBox="0 0 780 560" role="img" aria-label="Wiring diagram">
+<defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5"/></marker></defs>
+<rect x="270" y="14" width="230" height="530" rx="14" fill="none" stroke="var(--mu)" stroke-dasharray="6 5"/><text x="385" y="34" text-anchor="middle" class="m">HYBRID-X1 board</text>
+<rect x="290" y="46" width="190" height="70" rx="8" fill="#85B7EB" fill-opacity=".25" stroke="#378ADD" stroke-width="1.5"/><text x="385" y="76" text-anchor="middle" class="t">ESP32</text><text x="385" y="96" text-anchor="middle" class="m">Rain sensor + WiFi</text>
+<rect x="290" y="140" width="190" height="290" rx="8" fill="#85B7EB" fill-opacity=".25" stroke="#378ADD" stroke-width="1.5"/><text x="385" y="164" text-anchor="middle" class="t">Arduino</text><text x="385" y="182" text-anchor="middle" class="m">Sensors + valve relays</text>
+<text x="302" y="208" class="m">A0</text><text x="302" y="258" class="m">A1</text><text x="302" y="308" class="m">A2</text><text x="302" y="358" class="m">A3</text><text x="302" y="408" class="m">A4</text>
+<text x="468" y="258" text-anchor="end" class="m">D7</text><text x="468" y="308" text-anchor="end" class="m">D8</text><text x="468" y="358" text-anchor="end" class="m">D9</text><text x="302" y="108" class="m">GPIO34</text>
+<rect x="290" y="458" width="190" height="64" rx="8" fill="#97C459" fill-opacity=".25" stroke="#639922" stroke-width="1.5"/><text x="385" y="486" text-anchor="middle" class="t">Raspberry Pi 4</text><text x="385" y="504" text-anchor="middle" class="m">Rules, forecast, dashboard</text>
+<rect x="20" y="58" width="190" height="46" rx="8" class="bo"/><text x="115" y="78" text-anchor="middle" class="t">Rain sensor</text><text x="115" y="94" text-anchor="middle" class="m">AO to GPIO34</text>
+<rect x="20" y="190" width="190" height="46" rx="8" class="bo"/><text x="115" y="210" text-anchor="middle" class="t">Soil sensor, zone 1</text><text x="115" y="226" text-anchor="middle" class="m">to A0</text>
+<rect x="20" y="240" width="190" height="46" rx="8" class="bo"/><text x="115" y="260" text-anchor="middle" class="t">Soil sensor, zone 2</text><text x="115" y="276" text-anchor="middle" class="m">to A1</text>
+<rect x="20" y="290" width="190" height="46" rx="8" class="bo"/><text x="115" y="310" text-anchor="middle" class="t">Soil sensor, zone 3</text><text x="115" y="326" text-anchor="middle" class="m">to A2</text>
+<rect x="20" y="340" width="190" height="46" rx="8" class="bo"/><text x="115" y="360" text-anchor="middle" class="t">Tank level sensor</text><text x="115" y="376" text-anchor="middle" class="m">to A3</text>
+<rect x="20" y="390" width="190" height="46" rx="8" class="bo"/><text x="115" y="410" text-anchor="middle" class="t">LM35 temperature</text><text x="115" y="426" text-anchor="middle" class="m">to A4</text>
+<g fill="none" stroke="#2e8b57" stroke-width="2" marker-end="url(#ar)"><path d="M210 82H288"/><path d="M210 213H288"/><path d="M210 263H288"/><path d="M210 313H288"/><path d="M210 363H288"/><path d="M210 413H288"/></g>
+<rect x="560" y="226" width="200" height="150" rx="8" class="bo"/><text x="660" y="252" text-anchor="middle" class="t">3-channel relay module</text><text x="660" y="270" text-anchor="middle" class="m">IN1 D7 · IN2 D8 · IN3 D9</text><text x="660" y="290" text-anchor="middle" class="m">COM to 12 V supply +</text>
+<g fill="none" stroke="#378ADD" stroke-width="2" marker-end="url(#ar)"><path d="M480 253H558"/><path d="M480 303H558"/><path d="M480 353H558"/></g>
+<rect x="560" y="410" width="200" height="56" rx="8" class="bo"/><text x="660" y="434" text-anchor="middle" class="t">3 valves or pumps (12 V)</text><text x="660" y="452" text-anchor="middle" class="m">one per zone, own supply</text>
+<path d="M660 376V408" fill="none" stroke="#d85a30" stroke-width="2" marker-end="url(#ar)"/><text x="670" y="396" class="m">NO outputs</text>
+<path d="M385 430V456" fill="none" stroke="var(--tx)" stroke-width="2" marker-end="url(#ar)"/><text x="394" y="448" class="m">USB</text>
+<path d="M480 80H620V150" fill="none" stroke="var(--mu)" stroke-width="2" stroke-dasharray="6 5" marker-end="url(#ar)"/><text x="630" y="110" class="m">WiFi</text>
+<rect x="560" y="150" width="200" height="50" rx="8" class="bo"/><text x="660" y="180" text-anchor="middle" class="t">Phone dashboard</text>
+<text x="20" y="470" class="m">Sensors: 5 V (ESP32 rain sensor: 3.3 V).</text><text x="20" y="490" class="m">Join all GND wires, including the 12 V supply.</text><text x="20" y="510" class="m">Only one valve opens at a time (Pi rule).</text>
+</svg></div></div>
+
+<div class="pg" id="pc"><div class="tabs" id="ct"></div><div class="bx" style="padding:0"><pre id="cd"></pre></div><button class="b" id="cp">Copy this file</button></div>
+<div class="bx ex" id="how"><h2>How this project works</h2>
+<p>This is a smart irrigation system for a small farm. One HYBRID-X1 board does three jobs: the <b>Arduino part senses and switches</b>, the <b>ESP32 part connects wirelessly</b>, and the <b>Raspberry Pi part thinks and shows the dashboard</b>. Together they water each crop only when it needs it.</p>
+<h3>Step by step</h3>
+<div class="st3">
+<div><b>1. Sense (Arduino)</b>Every second it reads the soil moisture of zones 1, 2 and 3, the water level in the tank and the air temperature.</div>
+<div><b>2. Detect rain (ESP32)</b>The rain sensor is read every 5 seconds. The ESP32 sends "raining" or "dry" to the Pi over WiFi.</div>
+<div><b>3. Check the weather (Pi)</b>Every 30 minutes the Pi asks a free weather service for the chance of rain in the next 6 hours.</div>
+<div><b>4. Decide (Pi)</b>The Pi compares each zone's moisture with its crop target and applies the rules below.</div>
+<div><b>5. Switch (Arduino)</b>The Pi sends a short command over the USB cable. The Arduino turns on one relay, and that opens the valve or pump for the zone.</div>
+<div><b>6. Report (Pi)</b>The Pi shows the live dashboard on your phone, raises alerts, and saves every action to a log file.</div>
+</div>
+<h3>The rules the Pi follows</h3>
+<table><tr><th>Rule</th><th>Why</th></tr>
+<tr><td>Water a zone when its soil is below the crop's lower target, and stop at the upper target</td><td>Each crop has its own need: rice likes wet soil, wheat likes drier soil</td></tr>
+<tr><td>Do not water if it is raining or rain is forecast at 60% or more</td><td>Saves water. The dashboard counts the litres saved</td></tr>
+<tr><td>No watering from 11:00 to 16:00 unless the soil is very dry</td><td>Midday heat evaporates water and can stress plants</td></tr>
+<tr><td>Only one zone is watered at a time, driest first</td><td>Protects the power supply and keeps water pressure steady</td></tr>
+<tr><td>Block the pumps when the tank is below 10%</td><td>Stops the pump running dry, which damages it</td></tr>
+<tr><td>A sensor stuck at 0 for 10 readings means a fault. Disable that zone and alert</td><td>A broken sensor would otherwise water the zone forever</td></tr>
+<tr><td>The Arduino turns the pump off by itself after 2 minutes without a new command</td><td>Safety if the Pi or the USB cable fails</td></tr></table>
+<h3>How the controls on this page match the real parts</h3>
+<ul><li><b>Base temperature slider:</b> the LM35 temperature sensor. Hotter weather dries the soil faster.</li><li><b>Forecast slider:</b> the weather data the Pi downloads.</li><li><b>Make it rain:</b> the ESP32 rain sensor getting wet.</li><li><b>Crop dropdown:</b> the crop profile you pick on the Pi dashboard.</li><li><b>Break zone 3 sensor:</b> a soil sensor cable coming loose.</li><li><b>Manual pump:</b> the button on the phone dashboard. It switches auto mode off.</li></ul>
+<h3>Parts you need</h3>
+<p>HYBRID-X1 board (or an Arduino Uno, an ESP32 and a Raspberry Pi 4), 3 capacitive soil moisture sensors, 1 water level sensor, 1 LM35 temperature sensor, 1 rain sensor, a 3-channel relay module, 3 solenoid valves or small pumps (12 V), and a separate 12 V power supply for the valves.</p>
+<h3>Benefits</h3>
+<ul><li>Saves water and electricity, because plants are watered only when needed.</li><li>No walking to the field: control and monitoring from a phone.</li><li>Warns about low tank and broken sensors before the crop suffers.</li><li>Keeps a log, so you can see how much each zone was watered.</li></ul>
+<div class="nt">This page is a simulation that runs in your browser. The code files in the Code tab are written for real hardware but have not been tested on real sensors, so calibrate the soil sensor values (DRY and WET in the Arduino file) and test each valve before leaving it unattended.</div></div>
+</div>
+<script>
+var $=function(i){return document.getElementById(i)},F={"arduino_irrigation_v2.ino": "// HYBRID-X1 Arduino part (v2): 3 irrigation zones + tank + temperature.\n// Sends:  S:45,46,50,W:80,T:31   Receives:  \"P1\" = zone 1 pump on, \"P0\" = all off, \"P2\", \"P3\"\nconst int SOIL[3]  = {A0, A1, A2};   // capacitive soil sensors, one per zone\nconst int TANK = A3, TEMP = A4;\nconst int RELAY[3] = {7, 8, 9};      // 3-channel relay module (one valve/pump per zone)\nconst int DRY = 800, WET = 300;      // calibrate with your own sensors\nunsigned long lastCmd = 0, lastSend = 0;\n\nint pct(int raw, int dry, int wet) { return constrain(map(raw, dry, wet, 0, 100), 0, 100); }\nvoid allOff() { for (int i = 0; i < 3; i++) digitalWrite(RELAY[i], LOW); }\n\nvoid setup() {\n  Serial.begin(9600);\n  for (int i = 0; i < 3; i++) pinMode(RELAY[i], OUTPUT);\n  allOff();\n}\n\nvoid loop() {\n  if (Serial.available() >= 2) {\n    char c = Serial.read(), z = Serial.read();          // e.g. 'P','2'\n    if (c == 'P' && z == '0') allOff();\n    if (c == 'P' && z >= '1' && z <= '3') { allOff(); digitalWrite(RELAY[z - '1'], HIGH); lastCmd = millis(); }\n  }\n  // safety: never run a pump for more than 2 minutes without a new command from the Pi\n  if (millis() - lastCmd > 120000UL) allOff();\n\n  if (millis() - lastSend > 1000) {\n    lastSend = millis();\n    Serial.print(\"S:\");\n    for (int i = 0; i < 3; i++) { Serial.print(pct(analogRead(SOIL[i]), DRY, WET)); Serial.print(\",\"); }\n    Serial.print(\"W:\"); Serial.print(pct(analogRead(TANK), 0, 700));\n    Serial.print(\",T:\"); Serial.println((int)(analogRead(TEMP) * 500.0 / 1023.0));\n  }\n}\n", "esp32_irrigation_v2.ino": "// HYBRID-X1 ESP32 part (v2): rain sensor + WiFi link to the Pi hub.\n#include <WiFi.h>\n#include <HTTPClient.h>\nconst char* WIFI_SSID = \"YOUR_WIFI_NAME\";\nconst char* WIFI_PASS = \"YOUR_WIFI_PASSWORD\";\nconst char* HUB_URL   = \"http://192.168.1.50:5000/rain\";   // Pi's IP address\nconst int RAIN_PIN = 34;\n\nvoid setup() {\n  WiFi.begin(WIFI_SSID, WIFI_PASS);\n  while (WiFi.status() != WL_CONNECTED) delay(500);\n}\nvoid loop() {\n  if (WiFi.status() != WL_CONNECTED) WiFi.reconnect();\n  else {\n    HTTPClient http;\n    http.begin(HUB_URL);\n    http.addHeader(\"Content-Type\", \"application/json\");\n    http.POST(String(\"{\\\"rain\\\":\") + (analogRead(RAIN_PIN) < 2000) + \"}\");\n    http.end();\n  }\n  delay(5000);\n}\n", "pi_irrigation_hub_v2.py": "# HYBRID-X1 Pi part (v2): crop profiles, weather forecast, heat-hour rule, one pump at a time,\n# sensor-fault detection, CSV logging.   Run: python3 pi_irrigation_hub_v2.py\n# Needs: sudo apt install python3-flask python3-serial python3-requests\nimport csv, glob, threading, time\nimport requests, serial\nfrom flask import Flask, jsonify, request\n\nCROPS = {\"tomato\": (40, 65), \"rice\": (60, 85), \"wheat\": (25, 50), \"chilli\": (35, 60)}\nzones = [{\"crop\": \"tomato\", \"soil\": None, \"fault\": False, \"flat\": 0} for _ in range(3)]\nst = {\"tank\": None, \"temp\": None, \"rain\": 0, \"forecast\": 0, \"active\": 0, \"auto\": 1, \"alerts\": []}\nser = None\nLAT, LON = 13.15, 80.30            # <-- your farm location (used for the forecast)\n\ndef alert(m):\n    st[\"alerts\"] = (st[\"alerts\"] + [time.strftime(\"%H:%M \") + m])[-30:]\n\ndef pump(zone):                    # zone 0 = all off, 1..3 = that zone only\n    global ser\n    st[\"active\"] = zone\n    if ser:\n        ser.write((\"P%d\" % zone).encode())\n    with open(\"irrigation_log.csv\", \"a\", newline=\"\") as f:\n        csv.writer(f).writerow([time.strftime(\"%Y-%m-%d %H:%M:%S\"), zone] + [z[\"soil\"] for z in zones] + [st[\"tank\"], st[\"temp\"]])\n\ndef forecast_loop():               # rain probability for the next 6 hours (free Open-Meteo API)\n    while True:\n        try:\n            u = \"https://api.open-meteo.com/v1/forecast?latitude=%s&longitude=%s&hourly=precipitation_probability&forecast_days=1\" % (LAT, LON)\n            h = int(time.strftime(\"%H\"))\n            st[\"forecast\"] = max(requests.get(u, timeout=10).json()[\"hourly\"][\"precipitation_probability\"][h:h + 6])\n        except Exception:\n            pass\n        time.sleep(1800)\n\ndef decide():\n    if not st[\"auto\"]:\n        return\n    hour = int(time.strftime(\"%H\"))\n    for i, z in enumerate(zones):                       # sensor stuck at 0 for 10 readings = fault\n        z[\"flat\"] = z[\"flat\"] + 1 if z[\"soil\"] == 0 else 0\n        if z[\"flat\"] == 10 and not z[\"fault\"]:\n            z[\"fault\"] = True\n            alert(\"Zone %d sensor fault, zone disabled\" % (i + 1))\n    if st[\"active\"]:\n        z = zones[st[\"active\"] - 1]\n        lo, hi = CROPS[z[\"crop\"]]\n        if z[\"soil\"] >= hi or st[\"rain\"] or st[\"tank\"] < 10 or z[\"fault\"]:\n            pump(0)\n        else:\n            pump(st[\"active\"])                          # refresh the Arduino safety timer\n        return\n    if st[\"rain\"] or st[\"forecast\"] >= 60:\n        return                                          # rain now or soon: save the water\n    if st[\"tank\"] < 10:\n        alert(\"Tank low\")\n        return\n    need = [(z[\"soil\"] - CROPS[z[\"crop\"]][0], i) for i, z in enumerate(zones)\n            if not z[\"fault\"] and z[\"soil\"] is not None and z[\"soil\"] < CROPS[z[\"crop\"]][0]]\n    if need:\n        gap, i = min(need)                              # driest zone first\n        if 11 <= hour < 16 and gap > -15:\n            return                                      # avoid midday heat unless very dry\n        pump(i + 1)\n\ndef reader():\n    global ser\n    while True:\n        try:\n            ser = serial.Serial((glob.glob(\"/dev/ttyACM*\") + glob.glob(\"/dev/ttyUSB*\"))[0], 9600, timeout=2)\n            while True:\n                line = ser.readline().decode(errors=\"ignore\").strip()\n                if line.startswith(\"S:\"):\n                    a = line[2:].split(\",\")\n                    for i in range(3):\n                        zones[i][\"soil\"] = int(a[i])\n                    st[\"tank\"], st[\"temp\"] = int(a[3][2:]), int(a[4][2:])   # \"W:80\", \"T:31\"\n                    decide()\n        except Exception:\n            ser = None\n            time.sleep(2)\n\napp = Flask(__name__)\n@app.route(\"/status\")\ndef status(): return jsonify({\"zones\": zones, **st})\n@app.route(\"/rain\", methods=[\"POST\"])\ndef rain():\n    st[\"rain\"] = int((request.get_json(silent=True) or {}).get(\"rain\", 0)); return \"ok\"\n@app.route(\"/crop/<int:z>/<name>\")\ndef crop(z, name):\n    if name in CROPS: zones[z - 1][\"crop\"] = name\n    return jsonify(zones)\n@app.route(\"/pump/<int:z>\")\ndef manual(z):\n    st[\"auto\"] = 0; pump(z); return jsonify(st)\n@app.route(\"/auto/<int:v>\")\ndef auto(v):\n    st[\"auto\"] = v; return jsonify(st)\n\nif __name__ == \"__main__\":\n    threading.Thread(target=reader, daemon=True).start()\n    threading.Thread(target=forecast_loop, daemon=True).start()\n    app.run(host=\"0.0.0.0\", port=5000)\n"};
+document.querySelectorAll(".tb[data-p]").forEach(function(b){b.onclick=function(){document.querySelectorAll(".tb[data-p]").forEach(function(x){x.classList.toggle("a",x==b)});["d","w","c"].forEach(function(p){$("p"+p).classList.toggle("a",p==b.dataset.p)})}});
+var cur="";Object.keys(F).forEach(function(n,i){var b=document.createElement("button");b.className="tb"+(i?"":" a");b.textContent=n;b.onclick=function(){cur=n;$("cd").textContent=F[n];[].forEach.call($("ct").children,function(x){x.classList.toggle("a",x==b)})};$("ct").appendChild(b);if(!i){cur=n;$("cd").textContent=F[n]}});
+$("cp").onclick=function(){try{navigator.clipboard.writeText(F[cur]);$("cp").textContent="Copied"}catch(e){$("cp").textContent="Select the text and copy"}setTimeout(function(){$("cp").textContent="Copy this file"},1500)};
+var CR={Tomato:[40,65],Rice:[60,85],Wheat:[25,50],Chilli:[35,60]},COL=["#2e8b57","#d4881e","#7a5cd6"],
+Z=[{c:"Tomato",s:55,p:0,f:0,fl:0,H:[]},{c:"Rice",s:70,p:0,f:0,fl:0,H:[]},{c:"Wheat",s:40,p:0,f:0,fl:0,H:[]}],
+min=7*60,tmp=30,fc=10,rain=0,auto=1,w=85,used=0,saved=0,act=0,spd=1,skipNote="",alerts={};
+function log(m){var d=document.createElement("div");d.textContent=fmt(min)+"  "+m;$("log").appendChild(d);$("log").scrollTop=1e9;while($("log").children.length>80)$("log").removeChild($("log").firstChild)}
+function fmt(m){m=Math.floor(m)%1440;return ("0"+Math.floor(m/60)).slice(-2)+":"+("0"+m%60).slice(-2)}
+function alertSet(k,t,c){if(!alerts[k]){alerts[k]={t:t,c:c};log("ALERT: "+t)}}
+var h="",s="";for(var i=0;i<3;i++){h+='<div class="k"><b style="font-size:16px">Zone '+(i+1)+'</b> <select data-z="'+i+'">'+Object.keys(CR).map(function(n){return"<option"+(n==Z[i].c?" selected":"")+">"+n+"</option>"}).join("")+'</select><div style="font-size:26px;font-weight:600" id="zs'+i+'">--</div><div class="m" style="color:var(--mu);font-size:12px" id="zt'+i+'"></div><button class="b" data-m="'+i+'">Manual pump</button></div>'}
+$("zc").innerHTML=h;
+var P="";for(i=0;i<3;i++){var x0=20+i*200;P+='<rect x="'+x0+'" y="170" width="190" height="90" fill="#8a5a3a" id="sl'+i+'"/><rect x="'+x0+'" y="170" width="190" height="7" fill="#5e8f3a"/><text x="'+(x0+95)+'" y="250" text-anchor="middle" class="m" style="fill:#fff3e0" id="zl'+i+'">Zone '+(i+1)+'</text>';
+ for(var j=0;j<4;j++){var px=x0+25+j*45;P+='<rect x="'+(px-2)+'" y="128" width="4" height="44" fill="#4d8a2e"/><ellipse cx="'+(px-10)+'" cy="142" rx="12" ry="6" fill="#4caf50" class="lf'+i+'"/><ellipse cx="'+(px+10)+'" cy="132" rx="12" ry="6" fill="#4caf50" class="lf'+i+'"/>'}
+ P+='<g id="sp'+i+'" opacity="0"><rect x="'+(x0+93)+'" y="152" width="5" height="20" fill="#555"/><g stroke="#3a9ad9" stroke-width="3" stroke-linecap="round" fill="none"><path d="M'+(x0+95)+' 148Q'+(x0+60)+' 110 '+(x0+30)+' 160"/><path d="M'+(x0+95)+' 148Q'+(x0+130)+' 110 '+(x0+160)+' 160"/></g></g>'}
+$("zn").innerHTML=P;
+for(i=0;i<40;i++)s+='<circle cx="'+(Math.random()*700)+'" cy="'+(Math.random()*110)+'" r="1.3" fill="#fff"/>';$("stars").innerHTML=s;$("stars").setAttribute("opacity",0);
+function thr(i){return CR[Z[i].c][0]}function stp(i){return CR[Z[i].c][1]}
+function setPump(i,on,why){if(on){if(act==i+1)return;act=i+1;Z[i].p=1;log("Zone "+(i+1)+" pump ON: "+why)}else if(act){log("Zone "+act+" pump OFF: "+why);Z[act-1].p=0;act=0}}
+function decide(){
+ if(!auto)return;var hr=Math.floor(min/60)%24;
+ if(act){var z=Z[act-1];if(z.s>=stp(act-1)||rain||w<10||z.fl)setPump(act-1,0,z.s>=stp(act-1)?"target moisture reached":rain?"rain started":z.fl?"sensor fault":"tank low");return}
+ var need=[];Z.forEach(function(z,i){if(!z.fl&&z.s<thr(i))need.push([z.s-thr(i),i])});
+ if(!need.length){skipNote="";return}
+ need.sort(function(a,b){return a[0]-b[0]});var g=need[0][0],i=need[0][1];
+ if(rain||fc>=60){if(skipNote!="r"){skipNote="r";saved+=25;log("Zone "+(i+1)+" is dry but "+(rain?"it is raining":"rain is forecast ("+fc+"%)")+": watering skipped, ~25 L saved")}return}
+ if(w<10){alertSet("tank","Water tank is low, pumps blocked","bad");return}
+ if(hr>=11&&hr<16&&g>-15){if(skipNote!="h"){skipNote="h";log("Midday heat rule: watering zone "+(i+1)+" delayed until the evening")}return}
+ skipNote="";setPump(i,1,"soil "+Math.round(Z[i].s)+"% below "+Z[i].c+" target "+thr(i)+"%")}
+function spark(){var c=$("cv"),x=c.getContext("2d");x.clearRect(0,0,1000,110);Z.forEach(function(z,i){x.strokeStyle=COL[i];x.lineWidth=3;x.beginPath();z.H.forEach(function(v,k){var X=k*(1000/99),Y=106-v/100*100;k?x.lineTo(X,Y):x.moveTo(X,Y)});x.stroke();x.strokeStyle=COL[i];x.lineWidth=1;x.setLineDash([5,5]);x.beginPath();x.moveTo(0,106-thr(i));x.lineTo(1000,106-thr(i));x.stroke();x.setLineDash([])})}
+function tick(){
+ var dt=10*spd,hr=(min%1440)/60,dayT=tmp+5*Math.sin((hr-9)/24*2*Math.PI);
+ for(var n=0;n<spd;n++){Z.forEach(function(z,i){if(z.fl){z.s=0;return}z.s-=0.12*(dayT/30);if(rain)z.s+=0.8;if(z.p){z.s+=1.1}z.s=Math.max(0,Math.min(100,z.s))});if(act){w=Math.max(0,w-0.25);used+=0.25*8}}
+ min+=dt;if(rain&&Math.random()<.01*spd)rain=0;
+ decide();
+ Z.forEach(function(z,i){z.H.push(z.s);z.H=z.H.slice(-100);$("zs"+i).textContent=z.fl?"fault":Math.round(z.s)+"%";
+  var rate=0.12*(dayT/30)*(1000/(400*spd))/ (10*spd/10);
+  var left=z.s>thr(i)?Math.round((z.s-thr(i))/(0.12*(dayT/30))*10):0;
+  $("zt"+i).textContent=z.fl?"Sensor not responding":(z.p?"Watering now":(left?"Needs water in about "+Math.floor(left/60)+" h "+left%60+" min":"Needs water now"))+" · target "+thr(i)+"-"+stp(i)+"%";
+  $("sp"+i).setAttribute("opacity",z.p?1:0);var f=Math.max(0,Math.min(1,(z.s-15)/40));[].forEach.call(document.querySelectorAll(".lf"+i),function(e){e.setAttribute("fill","rgb("+Math.round(185-105*f)+","+Math.round(150+12*f)+","+Math.round(50+20*f)+")")});$("sl"+i).setAttribute("fill","rgb("+Math.round(150-55*z.s/100)+","+Math.round(110-45*z.s/100)+","+Math.round(70-30*z.s/100)+")")});
+ var day=hr>=6&&hr<19,d=Math.max(0,Math.min(1,day?1:0));$("sky").setAttribute("fill",rain?"#9aa9b5":day?(hr<8||hr>17?"#f4c99a":"#bfe3f5"):"#1b2742");$("stars").setAttribute("opacity",day?0:.9);
+ var ang=((hr-6)/13)*Math.PI;$("sun").setAttribute("cx",day?60+560*((hr-6)/13):60+560*(((hr+6)%24)/11));$("sun").setAttribute("cy",day?120-80*Math.sin(ang):120-70*Math.sin((((hr+6)%24)/11)*Math.PI));$("sun").setAttribute("fill",day?"#f6c945":"#e8ecf5");$("rain").setAttribute("opacity",rain?1:0);
+ var th2=Math.round(94*w/100);$("tk").setAttribute("y",217-th2);$("tk").setAttribute("height",th2);
+ $("kc").textContent=fmt(min);$("kw").textContent=Math.round(w)+"%";$("ku").textContent=Math.round(used)+" L";$("kv").textContent=Math.round(saved)+" L";$("kf").textContent=fc+"%";
+ var al="";Object.keys(alerts).forEach(function(k){al+='<span class="pill '+alerts[k].c+'">'+alerts[k].t+'</span>'});$("al").innerHTML=al||'<span class="pill ok">All systems normal</span>';
+ var minutesLeft=w>0?Math.round(w/0.25*(10*spd/spd)/6):0;
+ $("ins").innerHTML="Tank holds about <b>"+Math.round(w*8)+" L</b>, enough for roughly <b>"+Math.round(w*8/8)+"</b> minutes of pumping.<br>Heat rule: no watering 11:00 to 16:00 unless soil is very dry.<br>Pump rule: one zone at a time to protect the power supply.<br>"+(fc>=60?"Rain is likely, so the Pi is holding back water.":"No rain expected soon, so watering follows soil only.");
+ $("au").textContent="Auto mode: "+(auto?"on":"off");$("au").classList.toggle("a",!!auto);$("rn").classList.toggle("a",!!rain);$("rn").textContent=rain?"Stop rain":"Make it rain";
+ spark()}
+document.querySelectorAll("select[data-z]").forEach(function(e){e.onchange=function(){Z[+e.dataset.z].c=e.value;log("Pi: zone "+(+e.dataset.z+1)+" crop profile set to "+e.value)}});
+document.querySelectorAll("button[data-m]").forEach(function(e){e.onclick=function(){var i=+e.dataset.m;auto=0;if(act==i+1)setPump(i,0,"manual stop");else{if(act)setPump(act-1,0,"manual switch");setPump(i,1,"manual from phone")}}});
+$("tr").oninput=function(){tmp=+this.value;$("tv").textContent=tmp};$("fr").oninput=function(){fc=+this.value;$("fv").textContent=fc;if(fc<60)skipNote=""};$("sr").oninput=function(){spd=+this.value;$("sv").textContent=spd};
+$("au").onclick=function(){auto=auto?0:1;log("Auto mode "+(auto?"on":"off"))};$("rn").onclick=function(){rain=rain?0:1;log(rain?"ESP32: rain detected, sent to Pi":"ESP32: rain stopped")};
+$("rf").onclick=function(){w=100;delete alerts.tank;log("Tank refilled")};
+$("ft").onclick=function(){var z=Z[2];if(!z.fl){z.fl=1;log("Zone 3 soil sensor reads 0 constantly");setTimeout(function(){alertSet("f3","Zone 3 sensor fault detected by Pi, zone disabled","bad")},1500);this.textContent="Repair zone 3 sensor"}else{z.fl=0;z.s=45;delete alerts.f3;log("Zone 3 sensor repaired");this.textContent="Break zone 3 sensor"}};
+log("HYBRID-X1 started. Arduino, ESP32 and Pi online. Forecast loaded.");setInterval(tick,400);tick();
+</script></body></html>

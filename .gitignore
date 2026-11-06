@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.db
+leaf.jpg
+stranger.jpg
+irrigation_log.csv
+code/smarthome/family/
+code/smarthome/model/
+*.tflite
+.env
